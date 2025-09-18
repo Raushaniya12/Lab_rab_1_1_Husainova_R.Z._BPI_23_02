@@ -5,8 +5,57 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab_rab_1_1_Husainova_R.Z._BPI_23_02"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="400" Width="520" MinHeight="350" MinWidth="520">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="130"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Работники" HorizontalAlignment="Center" FontSize="18"/>
         
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Фамилия" />
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+            <TextBox x:Name="TxtSurname" Width="200" PreviewTextInput="TxtSurname_PreviewTextInput"/>
+        </StackPanel>
+        
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Должность"/>
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
+            <TextBox x:Name="TxtPosition" Width="200"/>
+        </StackPanel>
+
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Оклад"/>
+        <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal">
+        <TextBox x:Name="TxtSalary" Width="200" PreviewTextInput="TxtSalary_PreviewTextInput" 
+             PreviewKeyDown="TxtSalary_PreviewKeyDown"/>
+        </StackPanel>
+
+
+
+
+
+
+        <StackPanel Grid.Row="4" Grid.Column="0" Orientation="Horizontal">
+            <Button x:Name="BtnAdd" Width="125" Content="Добавить в список" Click="BtnAdd_Click"/>
+        </StackPanel>
+        
+      
+        <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal">
+            <Button x:Name="BtnUpp" Content="Увеличить оклад на 15%" Click="BtnUpp_Click"/>
+        </StackPanel>
+        <StackPanel Grid.Row="5" Grid.ColumnSpan="2" Orientation="Horizontal">
+            <Button x:Name="BtnEngineer" Content="Присвоить должность 'Инженер' работникам у которых фамилия начинается 'Иван'"
+                    Click="BtnEngineer_Click"/>
+        </StackPanel>
+        <TextBlock Grid.Row="6" Grid.Column="0" Text="Список работников"/>
+        <ListBox x:Name="LstWorkers" Grid.Row="6" Grid.Column="1" Margin="5"/>
     </Grid>
 </Window>
