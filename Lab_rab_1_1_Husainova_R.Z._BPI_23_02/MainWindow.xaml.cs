@@ -35,7 +35,7 @@ namespace Lab_rab_1_1_Husainova_R.Z._BPI_23_02
         private void TxtSalary_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
         {
 
-            if (!char.IsDigit(e.Text, 0) && e.Text != "." && e.Text != ",")
+            if (!char.IsDigit(e.Text, 0))
                 e.Handled = true;
         }
 
@@ -109,10 +109,5 @@ namespace Lab_rab_1_1_Husainova_R.Z._BPI_23_02
             TxtSurname.Focus();
         }
     }
-    public class Worker
-    {
-        public string Surname { get; set; }
-        public string Position { get; set; }
-        public double Salary { get; set; }
-    }
+    
 }
