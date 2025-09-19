@@ -85,20 +85,33 @@ namespace Lab_rab_1_1_Husainova_R.Z._BPI_23_02
 
         private void BtnEngineer_Click(object sender, RoutedEventArgs e)
         {
-            int count = 0;
-            foreach (var worker in workers)
+            string start = SurnameStart.Text.Trim(); // <-- Исправлено имя элемента!
+            if (string.IsNullOrEmpty(start))
             {
-                if (worker.Surname.StartsWith("Иван", StringComparison.OrdinalIgnoreCase))
-                {
-                    worker.Position = "Инженер";
-                    count++;
-                }
+                MessageBox.Show("Введите начало фамилии", "Внимание", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
             }
 
+            bool found = false;
+            foreach (var worker in workers)
+            {
+                if (worker.Surname.StartsWith(start, StringComparison.OrdinalIgnoreCase))
+                {
+                    worker.Position = "Инженер";
+                    found = true;
+                }
+            }
+            if (found)
+            {
+                UpdateList();
+                MessageBox.Show($"Должность 'Инженер' присвоена работникам, чьи фамилии начинаются с '{start}'.", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                MessageBox.Show($"Работников с фамилией, начинающейся на '{start}', не найдено.", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
             UpdateList();
-            MessageBox.Show($"Присвоена должность «Инженер» {count} работник(ам).", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
         }
-
         private void UpdateList()
         {
             LstWorkers.Items.Clear();

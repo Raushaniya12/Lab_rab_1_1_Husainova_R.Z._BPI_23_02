@@ -46,9 +46,13 @@
         <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal">
             <Button x:Name="BtnUpp" Content="Увеличить оклад на 15%" Click="BtnUpp_Click"/>
         </StackPanel>
-        <StackPanel Grid.Row="5" Grid.ColumnSpan="2" Orientation="Horizontal">
-            <Button x:Name="BtnEngineer" Content="Присвоить должность 'Инженер' работникам у которых фамилия начинается 'Иван'"
-                    Click="BtnEngineer_Click"/>
+        <StackPanel Grid.Row="5" Grid.Column="0" Orientation="Horizontal">
+            <TextBlock Text="Начало фамилии:" VerticalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal">
+            <TextBox x:Name="SurnameStart" Width="160"/>
+            <Button x:Name="BtnEngineer" Content="Присвоить должность 'Инженер'"
+            Click="BtnEngineer_Click"/>
         </StackPanel>
         <TextBlock Grid.Row="6" Grid.Column="0" Text="Список работников"/>
         
