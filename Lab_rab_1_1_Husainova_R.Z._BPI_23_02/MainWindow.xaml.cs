@@ -31,7 +31,12 @@ namespace Lab_rab_1_1_Husainova_R.Z._BPI_23_02
             if (!char.IsLetter(e.Text, 0) && e.Text != " " && !Regex.IsMatch(e.Text, @"[а-яА-ЯёЁa-zA-Z]"))
                 e.Handled = true;
         }
+        private void TxtPosition_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
 
+            if (!char.IsLetter(e.Text, 0) && e.Text != " " && !Regex.IsMatch(e.Text, @"[а-яА-ЯёЁa-zA-Z]"))
+                e.Handled = true;
+        }
         private void TxtSalary_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
         {
 

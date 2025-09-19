@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab_rab_1_1_Husainova_R.Z._BPI_23_02"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="520" MinHeight="350" MinWidth="520">
+        Title="MainWindow" Height="250" Width="520" MinHeight="250" MinWidth="520">
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -28,7 +28,7 @@
         </StackPanel>
         
         <TextBlock Grid.Row="2" Grid.Column="0" Text="Должность"/>
-        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" PreviewTextInput="TxtPosition_PreviewTextInput">
             <TextBox x:Name="TxtPosition" Width="200"/>
         </StackPanel>
 
@@ -51,6 +51,7 @@
                     Click="BtnEngineer_Click"/>
         </StackPanel>
         <TextBlock Grid.Row="6" Grid.Column="0" Text="Список работников"/>
-        <ListBox x:Name="LstWorkers" Grid.Row="6" Grid.Column="1" Margin="5"/>
+        
+        <ListBox x:Name="LstWorkers" ScrollViewer.IsDeferredScrollingEnabled="True" Grid.Row="6" Grid.Column="1" Margin="5"/>
     </Grid>
 </Window>
