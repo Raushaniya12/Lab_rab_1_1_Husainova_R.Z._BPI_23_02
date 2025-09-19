@@ -34,14 +34,9 @@
 
         <TextBlock Grid.Row="3" Grid.Column="0" Text="Оклад"/>
         <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal">
-        <TextBox x:Name="TxtSalary" Width="200" PreviewTextInput="TxtSalary_PreviewTextInput" 
+            <TextBox x:Name="TxtSalary" Width="200" PreviewTextInput="TxtSalary_PreviewTextInput" 
              PreviewKeyDown="TxtSalary_PreviewKeyDown"/>
         </StackPanel>
-
-
-
-
-
 
         <StackPanel Grid.Row="4" Grid.Column="0" Orientation="Horizontal">
             <Button x:Name="BtnAdd" Width="125" Content="Добавить в список" Click="BtnAdd_Click"/>

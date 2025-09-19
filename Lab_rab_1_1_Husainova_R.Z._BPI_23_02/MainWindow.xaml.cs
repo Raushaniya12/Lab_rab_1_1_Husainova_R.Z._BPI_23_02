@@ -54,13 +54,13 @@ namespace Lab_rab_1_1_Husainova_R.Z._BPI_23_02
 
             if (string.IsNullOrEmpty(surname) || string.IsNullOrEmpty(position) || string.IsNullOrEmpty(salaryStr))
             {
-                MessageBox.Show("Заполните все поля!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Заполните все поля", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
             if (!double.TryParse(salaryStr.Replace(',', '.'), out double salary) || salary <= 0)
             {
-                MessageBox.Show("Оклад должен быть положительным числом!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Оклад должен быть положительным числом", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
@@ -109,7 +109,6 @@ namespace Lab_rab_1_1_Husainova_R.Z._BPI_23_02
             TxtSurname.Focus();
         }
     }
-
     public class Worker
     {
         public string Surname { get; set; }
