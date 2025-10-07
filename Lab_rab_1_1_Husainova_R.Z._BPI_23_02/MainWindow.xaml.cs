@@ -86,7 +86,7 @@ namespace Lab_rab_1_1_Husainova_R.Z._BPI_23_02
 
         private void BtnEngineer_Click(object sender, RoutedEventArgs e)
         {
-            string start = SurnameStart.Text.Trim(); // <-- Исправлено имя элемента!
+            string start = SurnameStart.Text.Trim(); 
             if (string.IsNullOrEmpty(start))
             {
                 MessageBox.Show("Введите начало фамилии", "Внимание", MessageBoxButton.OK, MessageBoxImage.Warning);
@@ -115,7 +115,7 @@ namespace Lab_rab_1_1_Husainova_R.Z._BPI_23_02
         }
         private void SwitchTheme(string themeName)
         {
-            var uri = new Uri($"Theme/{themeName}.xaml", UriKind.Relative);
+            var uri = new Uri($"Themes/{themeName}.xaml", UriKind.Relative);
             var theme = new ResourceDictionary { Source = uri };
 
             var oldTheme = Application.Current.Resources.MergedDictionaries
