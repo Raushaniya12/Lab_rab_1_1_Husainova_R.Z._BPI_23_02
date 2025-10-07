@@ -23,6 +23,7 @@ namespace Lab_rab_1_1_Husainova_R.Z._BPI_23_02
         public MainWindow()
         {
             InitializeComponent();
+            
         }
 
         private void TxtSurname_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
@@ -111,6 +112,28 @@ namespace Lab_rab_1_1_Husainova_R.Z._BPI_23_02
                 MessageBox.Show($"Работников с фамилией, начинающейся на '{start}', не найдено.", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             UpdateList();
+        }
+        private void SwitchTheme(string themeName)
+        {
+            var uri = new Uri($"Theme/{themeName}.xaml", UriKind.Relative);
+            var theme = new ResourceDictionary { Source = uri };
+
+            var oldTheme = Application.Current.Resources.MergedDictionaries
+                .FirstOrDefault(d => d.Source?.OriginalString.Contains("Theme") == true);
+            if (oldTheme != null)
+                Application.Current.Resources.MergedDictionaries.Remove(oldTheme);
+
+            Application.Current.Resources.MergedDictionaries.Add(theme);
+        }
+        private void BtnLight_Click(object sender, RoutedEventArgs e)
+        {
+            SwitchTheme("LightTheme");
+            
+        }
+        private void BtnDark_Click(object sender, RoutedEventArgs e)
+        {
+            SwitchTheme("DarkTheme");
+            
         }
         private void UpdateList()
         {

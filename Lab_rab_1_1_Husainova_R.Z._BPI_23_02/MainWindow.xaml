@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:Lab_rab_1_1_Husainova_R.Z._BPI_23_02"
         mc:Ignorable="d"
         Title="MainWindow" Height="250" Width="520" MinHeight="250" MinWidth="520">
+    
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -20,8 +21,11 @@
             <ColumnDefinition Width="130"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Работники" HorizontalAlignment="Center" FontSize="18"/>
-        
+        <TextBlock Grid.Row="0" Grid.Column="0"  Text="Работники" HorizontalAlignment="Center" FontSize="18"/>
+        <WrapPanel Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right">
+            <Button x:Name="BtnLight" Content="Светлая тема" Click="BtnLight_Click"/>
+            <Button x:Name="BtnDark" Content="Темная тема" Click="BtnDark_Click" Margin="5,0,0,0"/>
+        </WrapPanel>
         <TextBlock Grid.Row="1" Grid.Column="0" Text="Фамилия" />
         <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
             <TextBox x:Name="TxtSurname" Width="200" PreviewTextInput="TxtSurname_PreviewTextInput"/>
