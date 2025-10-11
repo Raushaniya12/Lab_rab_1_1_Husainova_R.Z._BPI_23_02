@@ -1,7 +1,7 @@
 ﻿<Window x:Class="Lab_rab_1_1_Husainova_R.Z._BPI_23_02.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Работники" Height="250" Width="520" MinHeight="250" MinWidth="520"
+        Title="Работники" Height="270" Width="520" MinHeight="270" MinWidth="520" MaxWidth="250"
         Background="{DynamicResource WindowBackground}"
         Foreground="{DynamicResource WindowForeground}">
 
@@ -43,10 +43,10 @@
             <ColumnDefinition Width="130"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Row="0" Grid.Column="0"  Text="Работники" HorizontalAlignment="Center" FontSize="18"/>
+        <TextBlock Grid.Row="0" Grid.Column="1" Text="Управление работниками" HorizontalAlignment="Left" FontSize="18"/>
         <WrapPanel Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right">
-            <Button x:Name="BtnLight" Content="Светлая тема" Click="BtnLight_Click"/>
-            <Button x:Name="BtnDark" Content="Темная тема" Click="BtnDark_Click" Margin="5,0,0,0"/>
+            <Button x:Name="BtnLight" Content="☀️" Click="BtnLight_Click" Margin="5"/>
+            <Button x:Name="BtnDark" Content=" 🌙" Click="BtnDark_Click" Margin="5"/>
         </WrapPanel>
         <TextBlock Grid.Row="1" Grid.Column="0" Text="Фамилия" />
         <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
@@ -65,10 +65,9 @@
         </StackPanel>
 
         <StackPanel Grid.Row="4" Grid.Column="0" Orientation="Horizontal">
-            <Button x:Name="BtnAdd" Width="125" Content="Добавить в список" Click="BtnAdd_Click"/>
+            <Button x:Name="BtnAdd" Width="124" Content="Добавить в список" Click="BtnAdd_Click"/>
         </StackPanel>
-        
-      
+
         <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal">
             <Button x:Name="BtnUpp" Content="Увеличить оклад на 15%" Click="BtnUpp_Click"/>
         </StackPanel>
