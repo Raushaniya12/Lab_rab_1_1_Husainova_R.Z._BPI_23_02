@@ -9,9 +9,36 @@
         <Style TargetType="Button">
             <Setter Property="Background" Value="{DynamicResource ButtonBackground}" />
             <Setter Property="Foreground" Value="{DynamicResource ButtonForeground}" />
-            <Setter Property="Margin" Value="2" />
-        </Style>
+            <Setter Property="Margin" Value="3" />
+            <Setter Property="Padding" Value="3,2" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border 
+                    x:Name="border"
+                    Background="{TemplateBinding Background}">
+                            <ContentPresenter 
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Margin="{TemplateBinding Padding}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" 
+                                Value="{DynamicResource ButtonHoverBackground}" />
+                            </Trigger>
 
+                            <Trigger Property="Tag" Value="Active">
+                                <Setter TargetName="border" Property="Background" 
+                                Value="{DynamicResource ButtonActiveBackground}" />
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
         <Style TargetType="TextBox">
             <Setter Property="Background" Value="{DynamicResource TextBoxBackground}" />
             <Setter Property="Foreground" Value="{DynamicResource TextBoxForeground}" />
@@ -45,8 +72,8 @@
         </Grid.ColumnDefinitions>
         <TextBlock Grid.Row="0" Grid.Column="1" Text="Управление работниками" HorizontalAlignment="Left" FontSize="18"/>
         <WrapPanel Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right">
-            <Button x:Name="BtnLight" Content="☀️" Click="BtnLight_Click" Margin="5"/>
-            <Button x:Name="BtnDark" Content=" 🌙" Click="BtnDark_Click" Margin="5"/>
+            <Button x:Name="BtnLight" Content="☀️" Click="BtnLight_Click" />
+            <Button x:Name="BtnDark" Content=" 🌙" Click="BtnDark_Click" />
         </WrapPanel>
         <TextBlock Grid.Row="1" Grid.Column="0" Text="Фамилия" />
         <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
@@ -80,7 +107,7 @@
             Click="BtnEngineer_Click"/>
         </StackPanel>
         <TextBlock Grid.Row="6" Grid.Column="0" Text="Список работников"/>
-        
+
         <ListBox x:Name="LstWorkers" ScrollViewer.IsDeferredScrollingEnabled="True" Grid.Row="6" Grid.Column="1" Margin="0,5,0,0"/>
     </Grid>
 </Window>

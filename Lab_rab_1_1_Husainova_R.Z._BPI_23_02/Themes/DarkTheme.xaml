@@ -6,4 +6,6 @@
     <SolidColorBrush x:Key="ButtonForeground" Color="#FFF1F1F1"/>
     <SolidColorBrush x:Key="TextBoxBackground" Color="#3e3648"/>
     <SolidColorBrush x:Key="TextBoxForeground" Color="#FFF1F1F1"/>
+    <SolidColorBrush x:Key="ButtonHoverBackground" Color="#6a4999"/>
+    <SolidColorBrush x:Key="ButtonActiveBackground" Color="#3e3648"/>
 </ResourceDictionary>

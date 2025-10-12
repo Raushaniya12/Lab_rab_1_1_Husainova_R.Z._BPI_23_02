@@ -128,12 +128,15 @@ namespace Lab_rab_1_1_Husainova_R.Z._BPI_23_02
         private void BtnLight_Click(object sender, RoutedEventArgs e)
         {
             SwitchTheme("LightTheme");
-            
+            BtnLight.Tag = "Active";
+            BtnDark.Tag = null;
         }
+
         private void BtnDark_Click(object sender, RoutedEventArgs e)
         {
             SwitchTheme("DarkTheme");
-            
+            BtnDark.Tag = "Active";
+            BtnLight.Tag = null;
         }
         private void UpdateList()
         {
