@@ -8,10 +8,13 @@ using System.Windows;
 
 namespace Lab_rab_1_1_Husainova_R.Z._BPI_23_02
 {
-    /// <summary>
-    /// Логика взаимодействия для App.xaml
-    /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            ThemeManager.ApplyTheme("LightTheme");
+        }
     }
 }
+
